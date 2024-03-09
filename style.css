@@ -56,7 +56,42 @@ body {
     position: absolute;
     transform: translateY(-50%);
 }
+.password-strength {
+  margin-top: 15px;
+  height: 20px;
+  width: 100%;
+  background-color: #e4a3a3;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
 
+.progress-bar {
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+}
+
+.progress-bar.weak {
+  width: 0;
+  background-color: #f73e06;
+  transition: width 0.5s ease; /* Added for smooth transition */
+}
+
+.progress-bar.medium {
+  width: 0;
+  background-color: #ffe927;
+  transition: width 0.5s ease; /* Added for smooth transition */
+  left: 44.44%;
+}
+
+.progress-bar.strong {
+  width: 0;
+  background-color: #23ff2b;
+  transition: width 0.5s ease; /* Added for smooth transition */
+  left: 77.77%;
+}
 .wrapper .content {
     margin: 20px 0 10px;
 }

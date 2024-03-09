@@ -11,14 +11,14 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #95c8d5;
+    background: #2b05c4f3;
   }
   .wrapper {
     width: 450px;
     overflow: hidden;
     padding: 28px;
     border-radius: 8px;
-    background: #d5e2a6;
+    background: #e00a8a;
     box-shadow: 0 10px 25px rgba(175, 89, 89, 0.06);
   }
   .wrapper .pass-field {
@@ -59,7 +59,7 @@ body {
     margin-top: 20px;
   }
   .requirement-list li {
-    font-size: 0.8rem;
+    font-size: 1.0rem;
     list-style: none;
     display: flex;
     align-items: center;
@@ -68,10 +68,10 @@ body {
   .requirement-list li i {
     width: 20px;
     color: #f0edb4;
-    font-size: 0.6rem;
+    font-size: 0.4rem;
   }
   .requirement-list li.valid i {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #4f7bc2;
   }
   .requirement-list li span {
@@ -79,7 +79,7 @@ body {
     color: #4a0707;
   }
   .requirement-list li.valid span {
-    color: #999;
+    color: #c47b7b93;
   }
   @media screen and (max-width: 500px) {
     body, .wrapper {

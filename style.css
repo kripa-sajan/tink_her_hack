@@ -31,7 +31,7 @@ body {
     height: 100%;
     outline: none;
     padding: 0 17px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     border-radius: 5px;
     border: 1px solid #999999f6;
   }
@@ -53,13 +53,13 @@ body {
   }
   .content p {
     color: #14103a;
-    font-size: 1.3rem;
+    font-size: 1.0rem;
   }
   .content .requirement-list {
     margin-top: 20px;
   }
   .requirement-list li {
-    font-size: 1.3rem;
+    font-size: 0.8rem;
     list-style: none;
     display: flex;
     align-items: center;
@@ -67,7 +67,7 @@ body {
   }
   .requirement-list li i {
     width: 20px;
-    color: #fab3b3;
+    color: #ebf0b4;
     font-size: 0.6rem;
   }
   .requirement-list li.valid i {

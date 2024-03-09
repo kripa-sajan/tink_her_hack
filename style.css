@@ -56,16 +56,11 @@ body {
     position: absolute;
     transform: translateY(-50%);
 }
-.pass-field {
-    position: relative;
-  }
-  
-  #progress-bar {
+#progress-bar {
     height: 5px;
     width: 100%;
-    position: absolute;
-    bottom: 0; /* Align the progress bar to the bottom */
-    background-color: #FF6347;
+    margin-top: 5px;
+    background-color: #e2e7bde9;
     transition: width 0.3s ease;
   }
   

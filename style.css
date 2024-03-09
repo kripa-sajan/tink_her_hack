@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: "DM Serif Display", sans-serif; 
 }
+
 body {
     display: flex;
     align-items: center;
@@ -13,6 +14,7 @@ body {
     min-height: 100vh;
     background: #a79ebd;
 }
+
 .wrapper {
     width: 450px;
     overflow: hidden;
@@ -21,11 +23,13 @@ body {
     background: #ddcbee;
     box-shadow: 0 10px 25px rgba(8, 6, 6, 0.06);
 }
+
 .wrapper .pass-field {
     height: 65px;
     width: 100%;
     position: relative;
 }
+
 .pass-field input {
     width: 100%;
     height: 100%;
@@ -35,10 +39,12 @@ body {
     border-radius: 5px;
     border: 1px solid #999999f6;
 }
+
 .pass-field input:focus {
     padding: 0 16px;
     border: 2px solid #9eb9e4;
 }
+
 .pass-field i {
     right: 18px;
     top: 50%;
@@ -48,16 +54,20 @@ body {
     position: absolute;
     transform: translateY(-50%);
 }
+
 .wrapper .content {
     margin: 20px 0 10px;
 }
+
 .content p {
     color: #14103a;
     font-size: 1.0rem;
 }
+
 .content .requirement-list {
     margin-top: 20px;
 }
+
 .requirement-list li {
     font-size: 0.8rem;
     list-style: none;
@@ -65,40 +75,50 @@ body {
     align-items: center;
     margin-bottom: 15px;
 }
+
 .requirement-list li i {
     width: 20px;
     color: #ebf0b4;
     font-size: 0.6rem;
 }
+
 .requirement-list li.valid i {
     font-size: 1.2rem;
     color: #4f7bc2;
 }
+
 .requirement-list li span {
     margin-left: 12px;
     color: #4a0707;
 }
+
 .requirement-list li.valid span {
     color: #999;
 }
+
 .suggestion-message {
-    margin-top: 20px; /* Adjust as needed */
-    font-size: 0.9rem; /* Adjust as needed */
-    color: #4a0707; /* Adjust as needed */
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #4a0707;
 }
+
 @media screen and (max-width: 500px) {
     body, .wrapper {
         padding: 15px;
     }
+
     .wrapper .pass-field {
         height: 55px;
     }
+
     .pass-field input, .content p, .suggestion-message {
         font-size: 1.15rem;
     }
+
     .pass-field i, .requirement-list li {
         font-size: 1.1rem;
     }
+
     .requirement-list li span {
         margin-left: 7px;
     }

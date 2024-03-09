@@ -11,7 +11,21 @@ const requirements = [
     { regex: /[a-z]/, index: 2 }, // At least one lowercase letter
     { regex: /[^A-Za-z0-9]/, index: 3 }, // At least one special character
     { regex: /[A-Z]/, index: 4 }, // At least one uppercase letter
-]
+];
+
+// Function to generate a random password suggestion
+function generatePasswordSuggestion() {
+    const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+    const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numberChars = '0123456789';
+    const specialChars = '!@#$%^&*()-_=+';
+    const allChars = lowercaseChars + uppercaseChars + numberChars + specialChars;
+    let password = '';
+    for (let i = 0; i < 12; i++) { // Generate a 12-character password
+        password += allChars.charAt(Math.floor(Math.random() * allChars.length));
+    }
+    return password;
+}
 
 passwordInput.addEventListener("keyup", (e) => {
     requirements.forEach(item => {
@@ -31,6 +45,10 @@ passwordInput.addEventListener("keyup", (e) => {
     // Check password strength and update suggestion message
     const strength = getPasswordStrength(e.target.value);
     suggestionMessage.textContent = `Password Strength: ${strength}`;
+
+    // Generate and display a password suggestion
+    const suggestion = generatePasswordSuggestion();
+    suggestionMessage.textContent += ` (Suggested: ${suggestion})`;
 });
 
 eyeIcon.addEventListener("click", () => {

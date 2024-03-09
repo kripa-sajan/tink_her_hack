@@ -84,3 +84,4 @@ function generatePasswordSuggestion() {
     }
     return password;
 }
+

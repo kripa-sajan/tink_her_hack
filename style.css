@@ -12,7 +12,9 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #a79ebd;
+    background-image:url('https://cdn.pixabay.com/photo/2021/11/18/11/35/attack-6806140_640.png');
+    background-size:cover;
+    background-position: center;
 }
 
 .wrapper {
@@ -23,7 +25,7 @@ body {
     overflow: hidden;
     padding: 28px;
     border-radius: 8px;
-    background: #ddcbee;
+    background: #fcf9f9;
     box-shadow: 0 10px 25px rgba(8, 6, 6, 0.06);
 }
 

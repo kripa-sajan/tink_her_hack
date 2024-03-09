@@ -11,15 +11,15 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #95c8d5;
+    background: #a79ebd;
   }
   .wrapper {
     width: 450px;
     overflow: hidden;
     padding: 28px;
     border-radius: 8px;
-    background: #d5e2a6;
-    box-shadow: 0 10px 25px rgba(175, 89, 89, 0.06);
+    background: #ddcbee;
+    box-shadow: 0 10px 25px rgba(8, 6, 6, 0.06);
   }
   .wrapper .pass-field {
     height: 65px;

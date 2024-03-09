@@ -56,6 +56,7 @@ body {
     position: absolute;
     transform: translateY(-50%);
 }
+<<<<<<< HEAD
 .password-strength {
   margin-top: 15px;
   height: 20px;
@@ -92,6 +93,16 @@ body {
   transition: width 0.5s ease; /* Added for smooth transition */
   left: 77.77%;
 }
+=======
+#progress-bar {
+    height: 5px;
+    width: 100%;
+    margin-top: 5px;
+    background-color: #e2e7bde9;
+    transition: width 0.3s ease;
+  }
+  
+>>>>>>> 8cbca5bbba662f4d239a8d0fa16bdb2bee260f32
 .wrapper .content {
     margin: 20px 0 10px;
 }
@@ -115,7 +126,7 @@ body {
 
 .requirement-list li i {
     width: 20px;
-    color: #ebf0b4;
+    color: #e1e79b;
     font-size: 0.6rem;
 }
 

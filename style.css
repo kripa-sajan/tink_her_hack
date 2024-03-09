@@ -16,6 +16,9 @@ body {
 }
 
 .wrapper {
+    background: #2b05c4f3;
+  }
+  .wrapper {
     width: 450px;
     overflow: hidden;
     padding: 28px;
@@ -66,6 +69,9 @@ body {
 
 .content .requirement-list {
     margin-top: 20px;
+  }
+  .requirement-list li {
+    font-size: 1.0rem;
 }
 
 .requirement-list li {
@@ -90,6 +96,11 @@ body {
 .requirement-list li span {
     margin-left: 12px;
     color: #4a0707;
+  }
+  .requirement-list li.valid span {
+    color: #c47b7b93;
+  }
+  @media screen and (max-width: 500px) {
 }
 
 .requirement-list li.valid span {

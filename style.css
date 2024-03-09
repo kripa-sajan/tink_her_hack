@@ -56,7 +56,19 @@ body {
     position: absolute;
     transform: translateY(-50%);
 }
-
+.pass-field {
+    position: relative;
+  }
+  
+  #progress-bar {
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: 0; /* Align the progress bar to the bottom */
+    background-color: #FF6347;
+    transition: width 0.3s ease;
+  }
+  
 .wrapper .content {
     margin: 20px 0 10px;
 }
@@ -80,7 +92,7 @@ body {
 
 .requirement-list li i {
     width: 20px;
-    color: #ebf0b4;
+    color: #e1e79b;
     font-size: 0.6rem;
 }
 

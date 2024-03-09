@@ -67,7 +67,7 @@ body {
   }
   .requirement-list li i {
     width: 20px;
-    color: #ebf0b4;
+    color: #f0edb4;
     font-size: 0.6rem;
   }
   .requirement-list li.valid i {

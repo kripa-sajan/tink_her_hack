@@ -1,33 +1,4 @@
-<<<<<<< HEAD
-const passwordInput = document.querySelector(".pass-field input");
-const eyeIcon = document.querySelector(".pass-field i");
-const requirementList = document.querySelectorAll(".requirement-list li");
-const suggestionMessage = document.querySelector(".suggestion-message");
-const progressBar = document.querySelector(".progress-bar");
-
-const requirements = [
-    { regex: /.{8,}/, index: 0 }, 
-    { regex: /[0-9]/, index: 1 }, 
-    { regex: /[a-z]/, index: 2 }, 
-    { regex: /[^A-Za-z0-9]/, index: 3 }, 
-    { regex: /[A-Z]/, index: 4 }, 
-];
-
-function generatePasswordSuggestion() {
-    const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
-    const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const numberChars = '0123456789';
-    const specialChars = '!@#$%^&*()-_=+';
-    const allChars = lowercaseChars + uppercaseChars + numberChars + specialChars;
-    let password = '';
-    for (let i = 0; i < 12; i++) { 
-        password += allChars.charAt(Math.floor(Math.random() * allChars.length));
-    }
-    return password;
-}
-=======
 const passwordInput = document.querySelector(".pass-field input"); // Move the declaration to the top
->>>>>>> 8cbca5bbba662f4d239a8d0fa16bdb2bee260f32
 
 passwordInput.addEventListener("keyup", (e) => {
     const requirements = [
@@ -44,10 +15,7 @@ passwordInput.addEventListener("keyup", (e) => {
     requirements.forEach(item => {
         const isValid = item.regex.test(e.target.value);
         const requirementItem = requirementList[item.index];
-<<<<<<< HEAD
-=======
         
->>>>>>> 8cbca5bbba662f4d239a8d0fa16bdb2bee260f32
         if (isValid) {
             requirementItem.classList.add("valid");
             requirementItem.firstElementChild.className = "fa-solid fa-check";
@@ -60,23 +28,13 @@ passwordInput.addEventListener("keyup", (e) => {
     const strength = getPasswordStrength(e.target.value);
     updateProgressBar(strength); 
     suggestionMessage.textContent = `Password Strength: ${strength}`;
-<<<<<<< HEAD
-   
-=======
   
->>>>>>> 8cbca5bbba662f4d239a8d0fa16bdb2bee260f32
     const suggestion = generatePasswordSuggestion();
     suggestionMessage.textContent += ` (Suggested: ${suggestion})`;
     
     updateProgressBar(strength);
 });
 
-<<<<<<< HEAD
-eyeIcon.addEventListener("click", () => {
-    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-    eyeIcon.className = `fa-solid fa-eye${passwordInput.type === "password" ? "" : "-slash"}`;
-});
-=======
 function updateProgressBar(strength) {
     const progressBar = document.getElementById("progress-bar");
     let color;
@@ -90,7 +48,6 @@ function updateProgressBar(strength) {
     progressBar.style.width = `${strength * 20}%`;
     progressBar.style.backgroundColor = color;
 }
->>>>>>> 8cbca5bbba662f4d239a8d0fa16bdb2bee260f32
 
 function getPasswordStrength(password) {
     let strength = 0;
@@ -108,35 +65,6 @@ function getPasswordStrength(password) {
     });
     return strength;
 }
-<<<<<<< HEAD
-const progressBarWeak = document.querySelector(".progress-bar.weak");
-const progressBarMedium = document.querySelector(".progress-bar.medium");
-const progressBarStrong = document.querySelector(".progress-bar.strong");
-
-function updateProgressBar(password) {
-    let strength = getPasswordStrength(password);
-    const totalRequirements = requirements.length;
-    const segmentWidth = 100 / totalRequirements;
-
-    // Calculate the width of each segment based on password strength
-    let weakWidth = 0;
-    let mediumWidth = 0;
-    let strongWidth = 0;
-
-    if (strength > 0 && strength <= totalRequirements / 2) {
-        weakWidth = segmentWidth;
-    } else if (strength > totalRequirements / 2 && strength < totalRequirements) {
-        mediumWidth = segmentWidth;
-    } else if (strength === totalRequirements) {
-        strongWidth = segmentWidth;
-    }
-
-    // Set the width of each segment accordingly
-    progressBarWeak.style.width = `${weakWidth}%`;
-    progressBarMedium.style.width = `${mediumWidth}%`;
-    progressBarStrong.style.width = `${strongWidth}%`;
-}
-=======
 
 function generatePasswordSuggestion() {
     const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
@@ -150,4 +78,61 @@ function generatePasswordSuggestion() {
     }
     return password;
 }
->>>>>>> 8cbca5bbba662f4d239a8d0fa16bdb2bee260f32
+
+const saveButton = document.getElementById("save-button");
+
+// Event listener for password input
+passwordInput.addEventListener("keyup", (e) => {
+    // Your existing logic for password validation and strength calculation
+    const isValidPassword = checkPasswordValidity(e.target.value);
+    saveButton.disabled = !isValidPassword;
+});
+
+// Existing event listener for save button
+saveButton.addEventListener("click", () => {
+    // Add functionality to save password
+    const password = passwordInput.value;
+    alert("Password saved: " + password);
+});
+
+// Existing functions for password validation and strength calculation
+function checkPasswordValidity(password) {
+    // Define criteria for a valid password
+    const minLength = 8;
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasLowercase = /[a-z]/.test(password);
+    const hasNumber = /\d/.test(password);
+    const hasSpecialChar = /[!@#$%^&*()-_=+]/.test(password);
+
+    // Check if the password meets all the criteria
+    return password.length >= minLength &&
+           hasUppercase &&
+           hasLowercase &&
+           hasNumber &&
+           hasSpecialChar;
+}
+
+function getPasswordStrength(password) {
+    let strength = 0;
+    // Add strength based on password criteria
+    strength += Math.min(2, password.length / 4);
+    strength += /[A-Z]/.test(password) ? 1 : 0;
+    strength += /[a-z]/.test(password) ? 1 : 0;
+    strength += /\d/.test(password) ? 1 : 0;
+    strength += /[!@#$%^&*()-_=+]/.test(password) ? 1 : 0;
+    return Math.min(5, strength);
+}
+
+function generatePasswordSuggestion() {
+    const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+    const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numberChars = '0123456789';
+    const specialChars = '!@#$%^&*()-_=+';
+    const allChars = lowercaseChars + uppercaseChars + numberChars + specialChars;
+    let password = '';
+    const passwordLength = 12;
+    for (let i = 0; i < passwordLength; i++) {
+        password += allChars.charAt(Math.floor(Math.random() * allChars.length));
+    }
+    return password;
+}

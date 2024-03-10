@@ -6,8 +6,6 @@ eyeIcon.addEventListener("click", () => {
     eyeIcon.className = passwordInput.type === "password" ? "fa-solid fa-eye" : "fa-solid fa-eye-slash";
 });
 
-// Now, continue with your existing code...
-
 passwordInput.addEventListener("keyup", (e) => {
     const requirements = [
         { regex: /.{8,}/, index: 0 },
@@ -34,7 +32,7 @@ passwordInput.addEventListener("keyup", (e) => {
     });
 
     const strength = getPasswordStrength(e.target.value);
-    updateProgressBar(strength); // Update progress bar based on password strength
+    updateProgressBar(strength); 
     suggestionMessage.textContent = `Password Strength: ${strength}`;
 
     const suggestion = generatePasswordSuggestion();
@@ -45,11 +43,11 @@ function updateProgressBar(strength) {
     const progressBar = document.getElementById("progress-bar");
     let color;
     if (strength < 3) {
-        color = "#FF6347"; // Red for weak password
+        color = "#FF6347"; 
     } else if (strength < 5) {
-        color = "#FFD700"; // Yellow for medium password
+        color = "#FFD700"; 
     } else {
-        color = "#7CFC00"; // Green for strong password
+        color = "#7CFC00";
     }
     progressBar.style.width = `${strength * 20}%`;
     progressBar.style.backgroundColor = color;
@@ -84,4 +82,3 @@ function generatePasswordSuggestion() {
     }
     return password;
 }
-

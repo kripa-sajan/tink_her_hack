@@ -1,4 +1,10 @@
-const passwordInput = document.querySelector(".pass-field input"); // Move the declaration to the top
+const passwordInput = document.querySelector(".pass-field input");
+const eyeIcon = document.getElementById("eye-icon");
+
+eyeIcon.addEventListener("click", () => {
+    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    eyeIcon.className = passwordInput.type === "password" ? "fa-solid fa-eye" : "fa-solid fa-eye-slash";
+});
 
 passwordInput.addEventListener("keyup", (e) => {
     const requirements = [
@@ -8,14 +14,14 @@ passwordInput.addEventListener("keyup", (e) => {
         { regex: /[^A-Za-z0-9]/, index: 3 },
         { regex: /[A-Z]/, index: 4 },
     ];
-  
+
     const requirementList = document.querySelectorAll(".requirement-list li");
     const suggestionMessage = document.querySelector(".suggestion-message");
 
     requirements.forEach(item => {
         const isValid = item.regex.test(e.target.value);
         const requirementItem = requirementList[item.index];
-        
+
         if (isValid) {
             requirementItem.classList.add("valid");
             requirementItem.firstElementChild.className = "fa-solid fa-check";
@@ -24,11 +30,11 @@ passwordInput.addEventListener("keyup", (e) => {
             requirementItem.firstElementChild.className = "fa-solid fa-circle";
         }
     });
-    
+
     const strength = getPasswordStrength(e.target.value);
     updateProgressBar(strength); 
     suggestionMessage.textContent = `Password Strength: ${strength}`;
-  
+
     const suggestion = generatePasswordSuggestion();
     suggestionMessage.textContent += ` (Suggested: ${suggestion})`;
     
@@ -43,7 +49,7 @@ function updateProgressBar(strength) {
     } else if (strength < 5) {
         color = "#FFD700"; 
     } else {
-        color = "#7CFC00"; 
+        color = "#7CFC00";
     }
     progressBar.style.width = `${strength * 20}%`;
     progressBar.style.backgroundColor = color;
@@ -73,7 +79,7 @@ function generatePasswordSuggestion() {
     const specialChars = '!@#$%^&*()-_=+';
     const allChars = lowercaseChars + uppercaseChars + numberChars + specialChars;
     let password = '';
-    for (let i = 0; i < 12; i++) { 
+    for (let i = 0; i < 12; i++) {
         password += allChars.charAt(Math.floor(Math.random() * allChars.length));
     }
     return password;

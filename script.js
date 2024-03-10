@@ -87,30 +87,30 @@ function generatePasswordSuggestion() {
 
 const saveButton = document.getElementById("save-button");
 
-// Event listener for password input
+
 passwordInput.addEventListener("keyup", (e) => {
-    // Your existing logic for password validation and strength calculation
+    
     const isValidPassword = checkPasswordValidity(e.target.value);
     saveButton.disabled = !isValidPassword;
 });
 
-// Existing event listener for save button
+
 saveButton.addEventListener("click", () => {
-    // Add functionality to save password
+    
     const password = passwordInput.value;
     alert("Password saved: " + password);
 });
 
-// Existing functions for password validation and strength calculation
+
 function checkPasswordValidity(password) {
-    // Define criteria for a valid password
+    
     const minLength = 8;
     const hasUppercase = /[A-Z]/.test(password);
     const hasLowercase = /[a-z]/.test(password);
     const hasNumber = /\d/.test(password);
     const hasSpecialChar = /[!@#$%^&*()-_=+]/.test(password);
 
-    // Check if the password meets all the criteria
+    
     return password.length >= minLength &&
            hasUppercase &&
            hasLowercase &&
@@ -120,7 +120,7 @@ function checkPasswordValidity(password) {
 
 function getPasswordStrength(password) {
     let strength = 0;
-    // Add strength based on password criteria
+    
     strength += Math.min(2, password.length / 4);
     strength += /[A-Z]/.test(password) ? 1 : 0;
     strength += /[a-z]/.test(password) ? 1 : 0;
